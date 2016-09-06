@@ -12,6 +12,7 @@ Vagrant.configure(2) do |config|
     d.vm.hostname = "jenkins"
     d.vm.network "private_network", ip: "10.100.198.200"
     d.vm.provision :shell, path: "scripts/bootstrap_docker.sh"
+    d.vm.provision :shell, path: "scripts/bootstrap_docker_remote_api.sh"
     d.vm.provision :shell, path: "scripts/bootstrap_jenkins.sh"
     d.vm.provider "virtualbox" do |v|
       v.memory = 2048
@@ -23,6 +24,16 @@ Vagrant.configure(2) do |config|
     d.vm.network "private_network", ip: "10.100.198.201"
     d.vm.provision :shell, path: "scripts/bootstrap_docker.sh"
     d.vm.provision :shell, path: "scripts/bootstrap_docker_remote_api.sh"
+    d.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+    end
+  end
+  config.vm.define "registry" do |d|
+    d.vm.box = "ubuntu/trusty64"
+    d.vm.hostname = "jenkins"
+    d.vm.network "private_network", ip: "10.100.198.202"
+    d.vm.provision :shell, path: "scripts/bootstrap_docker.sh"
+    d.vm.provision :shell, path: "scripts/bootstrap_docker_registry.sh"
     d.vm.provider "virtualbox" do |v|
       v.memory = 1024
     end
