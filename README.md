@@ -13,8 +13,7 @@ build number as the versioning scheme. A simple mechanism but proven stable.
 
 The Jenkins jobs are far away from perfect:
 - missing checks if docker remote api calls fail
-- missing proper check for already running instance if the application,
-which is at the moment done my decrementing the build number
+- missing proper check for already running instance. Killing running instance is done by decrementing the build number and stopping the referring container.
 
 
 The folder "jenkins_plugins" contains the plugins needed to run these jobs (e.g. the Git-Plugin).
