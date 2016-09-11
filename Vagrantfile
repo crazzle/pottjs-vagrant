@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
+  config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   if (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
     config.vm.synced_folder ".", "/vagrant", mount_options: ["dmode=700,fmode=600"]
   else
@@ -14,6 +15,9 @@ Vagrant.configure(2) do |config|
     d.vm.provision :shell, path: "scripts/bootstrap_docker.sh"
     d.vm.provision :shell, path: "scripts/bootstrap_docker_remote_api.sh"
     d.vm.provision :shell, path: "scripts/bootstrap_jenkins.sh"
+    d.vm.provision :file, source: "jenkins_jobs", destination: "/var/lib/jenkins/jobs"
+    d.vm.provision :file, source: "jenkins_plugins", destination: "/var/lib/jenkins/plugins"
+    d.vm.provision :shell, inline: "chown -R jenkins /var/lib/jenkins"
     d.vm.provider "virtualbox" do |v|
       v.memory = 2048
     end

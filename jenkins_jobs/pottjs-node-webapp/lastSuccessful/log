@@ -1,0 +1,903 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace /var/lib/jenkins/jobs/pottjs-node-webapp/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/crazzle/pottjs-app.git # timeout=10
+Fetching upstream changes from https://github.com/crazzle/pottjs-app.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/crazzle/pottjs-app.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 079b5f04692923ab28d94a4a5f80c3c952133d3f (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 079b5f04692923ab28d94a4a5f80c3c952133d3f
+ > git rev-list 079b5f04692923ab28d94a4a5f80c3c952133d3f # timeout=10
+[workspace] $ /bin/sh -xe /tmp/hudson6346019326307350525.sh
++ REGISTRY=10.100.198.202:5000
++ TARGET=http://10.100.198.201:4243
++ VERSION=SNAPSHOT
++ ARTIFACT=pottjs_webapp
++ NAME=pottjs_webappSNAPSHOT2
++ expr 2 - 1
++ PREV_BUILD_NUMBER=1
++ PREV_NAME=pottjs_webappSNAPSHOT1
++ sudo docker build -t 10.100.198.202:5000/pottjs_webapp:2 .
+Sending build context to Docker daemon 68.61 kB
+Step 1 : FROM node:argon
+argon: Pulling from library/node
+8ad8b3f87b37: Pulling fs layer
+751fe39c4d34: Pulling fs layer
+ae3b77eefc06: Pulling fs layer
+7783aac582ec: Pulling fs layer
+393ad8a32e58: Pulling fs layer
+dbe45f91a065: Pulling fs layer
+7783aac582ec: Waiting
+393ad8a32e58: Waiting
+dbe45f91a065: Waiting
+ae3b77eefc06: Verifying Checksum
+ae3b77eefc06: Download complete
+751fe39c4d34: Verifying Checksum
+751fe39c4d34: Download complete
+393ad8a32e58: Verifying Checksum
+393ad8a32e58: Download complete
+8ad8b3f87b37: Verifying Checksum
+8ad8b3f87b37: Download complete
+8ad8b3f87b37: Pull complete
+751fe39c4d34: Pull complete
+ae3b77eefc06: Pull complete
+dbe45f91a065: Verifying Checksum
+dbe45f91a065: Download complete
+7783aac582ec: Verifying Checksum
+7783aac582ec: Download complete
+7783aac582ec: Pull complete
+393ad8a32e58: Pull complete
+dbe45f91a065: Pull complete
+Digest: sha256:c023895a7b91914918c71cfaf714f2c7610d43c68bb53fc724873a608762a433
+Status: Downloaded newer image for node:argon
+ ---> 5d0dbcaffefc
+Step 2 : RUN mkdir -p /usr/src/app
+ ---> Running in d781b1d5c738
+ ---> 9b541fa05ab2
+Removing intermediate container d781b1d5c738
+Step 3 : WORKDIR /usr/src/app
+ ---> Running in 943627fc4ba4
+ ---> 0f4a999d5d0f
+Removing intermediate container 943627fc4ba4
+Step 4 : COPY package.json /usr/src/app/
+ ---> 9cb63dd20ee1
+Removing intermediate container ccc347cc2c9d
+Step 5 : RUN npm install
+ ---> Running in 2dc41cb9e6d2
+[91mnpm [0m[91minfo it worked if it ends with ok
+npm info using npm@2.15.9
+npm info using node@v4.5.0
+[0m[91mnpm [0m[91mWARN [0m[91mpackage.json hello_world_webapp@1.0.0 No repository field.
+[0m[91mnpm [0m[91mWARN [0m[91mpackage.json hello_world_webapp@1.0.0 No README data
+[0m[91mnpm [0m[91mWARN [0m[91mpackage.json hello_world_webapp@1.0.0 No license field.
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:48 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/express
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/express
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:49 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/express/-/express-4.14.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/express/-/express-4.14.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall express@4.14.0 into /usr/src/app
+[0m[91mnpm [0m[91minfo [0m[91minstallOne express@4.14.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall express@4.14.0
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/array-flatten
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/content-disposition
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/content-type
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/cookie
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/cookie-signature
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/debug
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/depd
+[0m[91mnpm [0m[91minfo[0m[91m attempt[0m[91m registry request try #1 at 7:19:49 PM
+npm[0m[91m http[0m[91m request[0m[91m GET https://registry.npmjs.org/encodeurl
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/escape-html
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/etag
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/finalhandler
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/fresh
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/merge-descriptors
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/methods
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/on-finished
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/parseurl
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/path-to-regexp
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/proxy-addr
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/qs
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/range-parser
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/send
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/serve-static
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/type-is
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/utils-merge
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/vary
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:49 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/accepts
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/array-flatten
+[0m[91mnpm [0m[91mhttp [0m[91m200[0m[91m https://registry.npmjs.org/content-type
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/cookie-signature
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/escape-html
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/encodeurl
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/methods
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/fresh
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/merge-descriptors
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/on-finished
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/parseurl
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/content-disposition
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/depd
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/etag
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/finalhandler
+[0m[91mnpm [0m[91mhttp[0m[91m 200[0m[91m https://registry.npmjs.org/cookie
+npm[0m[91m http[0m[91m 200[0m[91m https://registry.npmjs.org/debug
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/proxy-addr
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/range-parser
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/path-to-regexp
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/qs
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/send
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/fresh/-/fresh-0.3.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/utils-merge
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/vary
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/content-type/-/content-type-1.0.2.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/finalhandler/-/finalhandler-0.5.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/methods/-/methods-1.1.2.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry[0m[91m fetch attempt 1 at 7:19:50 PM
+npm[0m[91m info[0m[91m attempt[0m[91m registry request try #1 at 7:19:50 PM
+npm[0m[91m http[0m[91m fetch[0m[91m GET https://registry.npmjs.org/parseurl/-/parseurl-1.3.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/depd/-/depd-1.1.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/etag/-/etag-1.7.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-1.0.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/fresh/-/fresh-0.3.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/debug/-/debug-2.2.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/type-is
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/content-disposition/-/content-disposition-0.5.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/content-type/-/content-type-1.0.2.tgz
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/serve-static
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/finalhandler/-/finalhandler-0.5.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/methods/-/methods-1.1.2.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/on-finished/-/on-finished-2.3.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/parseurl/-/parseurl-1.3.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/proxy-addr/-/proxy-addr-1.1.2.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/accepts
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/cookie/-/cookie-0.3.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch[0m[91m 200 https://registry.npmjs.org/depd/-/depd-1.1.0.tgz
+npm[0m[91m http[0m[91m fetch[0m[91m 200 https://registry.npmjs.org/debug/-/debug-2.2.0.tgz
+npm[0m[91m http[0m[91m fetch[0m[91m 200 https://registry.npmjs.org/etag/-/etag-1.7.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/qs/-/qs-6.2.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/proxy-addr/-/proxy-addr-1.1.2.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/send/-/send-0.14.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/vary/-/vary-1.1.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/qs/-/qs-6.2.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/type-is/-/type-is-1.6.13.tgz
+[0m[91mnpm[0m[91m info[0m[91m retry[0m[91m fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/serve-static/-/serve-static-1.11.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/send/-/send-0.14.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/vary/-/vary-1.1.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:50 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/accepts/-/accepts-1.3.3.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/type-is/-/type-is-1.6.13.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/serve-static/-/serve-static-1.11.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/accepts/-/accepts-1.3.3.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall array-flatten@1.1.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall cookie-signature@1.0.6 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall merge-descriptors@1.0.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall fresh@0.3.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall content-disposition@0.5.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall content-type@1.0.2 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall escape-html@1.0.3 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall encodeurl@1.0.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall finalhandler@0.5.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall methods@1.1.2 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall on-finished@2.3.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall parseurl@1.3.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall cookie@0.3.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall depd@1.1.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall debug@2.2.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall etag@1.7.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall path-to-regexp@0.1.7 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall proxy-addr@1.1.2 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall range-parser@1.2.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall qs@6.2.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall utils-merge@1.0.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall send@0.14.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall vary@1.1.0 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall type-is@1.6.13 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall serve-static@1.11.1 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstall accepts@1.3.3 into /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91minstallOne array-flatten@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne cookie-signature@1.0.6
+[0m[91mnpm [0m[91minfo [0m[91minstallOne merge-descriptors@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne fresh@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne content-disposition@0.5.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne content-type@1.0.2
+[0m[91mnpm [0m[91minfo [0m[91minstallOne escape-html@1.0.3
+[0m[91mnpm [0m[91minfo [0m[91minstallOne encodeurl@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne finalhandler@0.5.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne methods@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91minstallOne on-finished@2.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne parseurl@1.3.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne cookie@0.3.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne depd@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne debug@2.2.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne etag@1.7.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne path-to-regexp@0.1.7
+[0m[91mnpm [0m[91minfo [0m[91minstallOne proxy-addr@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91minstallOne range-parser@1.2.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne qs@6.2.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne utils-merge@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne send@0.14.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne vary@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne type-is@1.6.13
+[0m[91mnpm [0m[91minfo [0m[91minstallOne serve-static@1.11.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne accepts@1.3.3
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall escape-html@1.0.3
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall array-flatten@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall cookie-signature@1.0.6
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall utils-merge@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall merge-descriptors@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall content-type@1.0.2
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall encodeurl@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall methods@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall fresh@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall content-disposition@0.5.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall finalhandler@0.5.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall on-finished@2.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall parseurl@1.3.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall cookie@0.3.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall etag@1.7.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall path-to-regexp@0.1.7
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall proxy-addr@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall range-parser@1.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall vary@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall type-is@1.6.13
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall serve-static@1.11.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall accepts@1.3.3
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall send@0.14.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/escape-html
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/array-flatten
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/cookie-signature
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/utils-merge
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/merge-descriptors
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/content-type
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/encodeurl
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/methods
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/fresh
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/content-disposition
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff escape-html@1.0.3
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/parseurl
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/cookie
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/etag
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/path-to-regexp
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/range-parser
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/vary
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/serve-static
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff array-flatten@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/mime-types
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/negotiator
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/ee-first
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/statuses
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/forwarded
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/media-typer
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/unpipe
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/ipaddr.js
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/destroy
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/http-errors
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/mime
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:50 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/ms
+[0m[91mnpm [0m[91minfo [0m[91minstall escape-html@1.0.3
+[0m[91mnpm [0m[91minfo [0m[91minstall array-flatten@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff cookie-signature@1.0.6
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall escape-html@1.0.3
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff utils-merge@1.0.0
+[0m[91mnpm [0m[91mhttp [0m[91m200[0m[91m https://registry.npmjs.org/ee-first
+npm[0m[91m http[0m[91m 200[0m[91m https://registry.npmjs.org/forwarded
+npm[0m[91m http[0m[91m 200[0m[91m https://registry.npmjs.org/unpipe
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/media-typer
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall array-flatten@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff merge-descriptors@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff content-type@1.0.2
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff encodeurl@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff methods@1.1.2
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/statuses
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/ipaddr.js
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff fresh@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff content-disposition@0.5.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff parseurl@1.3.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff cookie@0.3.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff etag@1.7.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff path-to-regexp@0.1.7
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff range-parser@1.2.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff vary@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff serve-static@1.11.1
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/negotiator
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/mime-types
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/destroy
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/http-errors
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/ms
+[0m[91mnpm [0m[91mhttp [0m[91m200[0m[91m https://registry.npmjs.org/mime
+npm[0m[91m info[0m[91m install[0m[91m cookie-signature@1.0.6
+[0m[91mnpm [0m[91minfo [0m[91minstall utils-merge@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstall merge-descriptors@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstall content-type@1.0.2
+[0m[91mnpm [0m[91minfo [0m[91minstall encodeurl@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstall methods@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall cookie-signature@1.0.6
+[0m[91mnpm [0m[91minfo [0m[91minstall fresh@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstall content-disposition@0.5.1
+[0m[91mnpm [0m[91minfo [0m[91minstall parseurl@1.3.1
+[0m[91mnpm[0m[91m info[0m[91m install[0m[91m cookie@0.3.1
+[0m[91mnpm [0m[91minfo [0m[91minstall etag@1.7.0
+[0m[91mnpm [0m[91minfo [0m[91minstall path-to-regexp@0.1.7
+[0m[91mnpm [0m[91minfo [0m[91minstall range-parser@1.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall utils-merge@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstall vary@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstall serve-static@1.11.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall merge-descriptors@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall content-type@1.0.2
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall encodeurl@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall methods@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall fresh@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall content-disposition@0.5.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall parseurl@1.3.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall cookie@0.3.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall etag@1.7.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall path-to-regexp@0.1.7
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall range-parser@1.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall vary@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall serve-static@1.11.1
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/forwarded/-/forwarded-0.1.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.1.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/statuses/-/statuses-1.3.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall depd@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/mime-types/-/mime-types-2.1.11.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/ms/-/ms-0.7.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall debug@2.2.0
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/http-errors/-/http-errors-1.5.0.tgz
+[0m[91mnpm [0m[91minfo[0m[91m retry[0m[91m fetch attempt 1 at 7:19:51 PM
+npm[0m[91m info[0m[91m attempt[0m[91m registry request try #1 at 7:19:51 PM
+npm[0m[91m http[0m[91m fetch[0m[91m GET https://registry.npmjs.org/mime/-/mime-1.3.4.tgz
+npm[0m[91m http[0m[91m fetch[0m[91m 200 https://registry.npmjs.org/forwarded/-/forwarded-0.1.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.1.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/statuses/-/statuses-1.3.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/mime-types/-/mime-types-2.1.11.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/ms/-/ms-0.7.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/http-errors/-/http-errors-1.5.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/mime/-/mime-1.3.4.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall ee-first@1.1.1 into /usr/src/app/node_modules/express/node_modules/on-finished
+[0m[91mnpm [0m[91minfo [0m[91minstallOne ee-first@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/depd
+[0m[91mnpm [0m[91minfo [0m[91minstall unpipe@1.0.0 into /usr/src/app/node_modules/express/node_modules/finalhandler
+[0m[91mnpm [0m[91minfo [0m[91minstall statuses@1.3.0 into /usr/src/app/node_modules/express/node_modules/finalhandler
+[0m[91mnpm [0m[91minfo [0m[91minstallOne unpipe@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstall negotiator@0.6.1 into /usr/src/app/node_modules/express/node_modules/accepts
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-types@2.1.11 into /usr/src/app/node_modules/express/node_modules/accepts
+[0m[91mnpm [0m[91minfo [0m[91minstallOne negotiator@0.6.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91minstall media-typer@0.3.0 into /usr/src/app/node_modules/express/node_modules/type-is
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-types@2.1.11 into /usr/src/app/node_modules/express/node_modules/type-is
+[0m[91mnpm [0m[91minfo [0m[91minstallOne media-typer@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff depd@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstall forwarded@0.1.0 into /usr/src/app/node_modules/express/node_modules/proxy-addr
+[0m[91mnpm [0m[91minfo [0m[91minstall ipaddr.js@1.1.1 into /usr/src/app/node_modules/express/node_modules/proxy-addr
+[0m[91mnpm [0m[91minfo [0m[91minstallOne forwarded@0.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne ipaddr.js@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/ms/-/ms-0.7.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall depd@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstall statuses@1.3.0 into /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstall destroy@1.0.4 into /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstall ms@0.7.1 into /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstall http-errors@1.5.0 into /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstall mime@1.3.4 into /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstallOne statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne destroy@1.0.4
+[0m[91mnpm [0m[91minfo [0m[91minstallOne ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne http-errors@1.5.0
+[0m[91mnpm [0m[91minfo [0m[91minstallOne mime@1.3.4
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall depd@1.1.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall qs@6.2.0
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/ms/-/ms-0.7.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/qs
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff qs@6.2.0
+[0m[91mnpm [0m[91minfo [0m[91minstall ms@0.7.1 into /usr/src/app/node_modules/express/node_modules/debug
+[0m[91mnpm [0m[91minfo [0m[91minstallOne ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91minstall qs@6.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall qs@6.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall ee-first@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall unpipe@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall media-typer@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall destroy@1.0.4
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall forwarded@0.1.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/on-finished/node_modules/ee-first
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall http-errors@1.5.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff ee-first@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstall ee-first@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/finalhandler/node_modules/unpipe
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall ee-first@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/type-is/node_modules/media-typer
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/destroy
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/proxy-addr/node_modules/forwarded
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/on-finished
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/mime-db
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff unpipe@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/finalhandler/node_modules/statuses
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff media-typer@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff destroy@1.0.4
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff forwarded@0.1.0
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/inherits
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mrequest GET https://registry.npmjs.org/setprototypeof
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff on-finished@2.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91minstall unpipe@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall negotiator@0.6.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall unpipe@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstall media-typer@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91minstall destroy@1.0.4
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/ms
+[0m[91mnpm [0m[91minfo [0m[91minstall forwarded@0.1.0
+[0m[91mnpm [0m[91minfo [0m[91minstall on-finished@2.3.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall media-typer@0.3.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/statuses
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall destroy@1.0.4
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/mime-db
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall forwarded@0.1.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall on-finished@2.3.0
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/setprototypeof
+[0m[91mnpm [0m[91mhttp [0m[91m200 https://registry.npmjs.org/inherits
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall mime@1.3.4
+[0m[91mnpm [0m[91minfo [0m[91minstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/finalhandler
+[0m[91mnpm [0m[91minfo [0m[91minstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/mime-db/-/mime-db-1.23.0.tgz
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall ipaddr.js@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91mretry fetch attempt 1 at 7:19:51 PM
+[0m[91mnpm [0m[91minfo [0m[91mattempt registry request try #1 at 7:19:51 PM
+[0m[91mnpm [0m[91mhttp [0m[91mfetch GET https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall statuses@1.3.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/debug/node_modules/ms
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/accepts/node_modules/negotiator
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff finalhandler@0.5.0
+[0m[91mnpm [0m[91minfo [0m[91minstall finalhandler@0.5.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall finalhandler@0.5.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff negotiator@0.6.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/mime
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/mime-db/-/mime-db-1.23.0.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz
+[0m[91mnpm [0m[91mhttp [0m[91mfetch 200 https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.1.tgz
+[0m[91mnpm [0m[91minfo [0m[91minstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91minstall negotiator@0.6.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall ms@0.7.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall negotiator@0.6.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/proxy-addr/node_modules/ipaddr.js
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/debug
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff mime@1.3.4
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff ipaddr.js@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff debug@2.2.0
+[0m[91mnpm [0m[91minfo [0m[91minstall mime@1.3.4
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall mime@1.3.4
+[0m[91mnpm [0m[91minfo [0m[91minstall inherits@2.0.1 into /usr/src/app/node_modules/express/node_modules/send/node_modules/http-errors
+[0m[91mnpm [0m[91minfo [0m[91minstall setprototypeof@1.0.1 into /usr/src/app/node_modules/express/node_modules/send/node_modules/http-errors
+[0m[91mnpm [0m[91minfo [0m[91minstallOne inherits@2.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstallOne setprototypeof@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstall ipaddr.js@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91minstall debug@2.2.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall ipaddr.js@1.1.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall debug@2.2.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/proxy-addr
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-db@1.23.0 into /usr/src/app/node_modules/express/node_modules/accepts/node_modules/mime-types
+[0m[91mnpm [0m[91minfo [0m[91minstallOne mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-db@1.23.0 into /usr/src/app/node_modules/express/node_modules/type-is/node_modules/mime-types
+[0m[91mnpm [0m[91minfo [0m[91minstallOne mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff proxy-addr@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91minstall proxy-addr@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall proxy-addr@1.1.2
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall setprototypeof@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall inherits@2.0.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/http-errors/node_modules/setprototypeof
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff setprototypeof@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstall setprototypeof@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/http-errors/node_modules/inherits
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall setprototypeof@1.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff inherits@2.0.1
+[0m[91mnpm [0m[91minfo [0m[91minstall inherits@2.0.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall inherits@2.0.1
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send/node_modules/http-errors
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/accepts/node_modules/mime-types/node_modules/mime-db
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/type-is/node_modules/mime-types/node_modules/mime-db
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff http-errors@1.5.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91minstall http-errors@1.5.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall http-errors@1.5.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/send
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall mime-db@1.23.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/accepts/node_modules/mime-types
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/type-is/node_modules/mime-types
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff send@0.14.1
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91minstall send@0.14.1
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall send@0.14.1
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91minstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall mime-types@2.1.11
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/accepts
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express/node_modules/type-is
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff accepts@1.3.3
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff type-is@1.6.13
+[0m[91mnpm [0m[91minfo [0m[91minstall accepts@1.3.3
+[0m[91mnpm [0m[91minfo [0m[91minstall type-is@1.6.13
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall accepts@1.3.3
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall type-is@1.6.13
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app/node_modules/express
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff express@4.14.0
+[0m[91mnpm [0m[91minfo [0m[91minstall express@4.14.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall express@4.14.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mprepublish hello_world_webapp@1.0.0
+[0mexpress@4.14.0 node_modules/express
+├── escape-html@1.0.3
+├── array-flatten@1.1.1
+├── cookie-signature@1.0.6
+├── utils-merge@1.0.0
+├── merge-descriptors@1.0.1
+├── content-type@1.0.2
+├── encodeurl@1.0.1
+├── methods@1.1.2
+├── fresh@0.3.0
+├── content-disposition@0.5.1
+├── parseurl@1.3.1
+├── cookie@0.3.1
+├── etag@1.7.0
+├── path-to-regexp@0.1.7
+├── range-parser@1.2.0
+├── vary@1.1.0
+├── serve-static@1.11.1
+├── depd@1.1.0
+├── qs@6.2.0
+├── on-finished@2.3.0 (ee-first@1.1.1)
+├── finalhandler@0.5.0 (unpipe@1.0.0, statuses@1.3.0)
+├── debug@2.2.0 (ms@0.7.1)
+├── proxy-addr@1.1.2 (forwarded@0.1.0, ipaddr.js@1.1.1)
+├── send@0.14.1 (destroy@1.0.4, ms@0.7.1, statuses@1.3.0, mime@1.3.4, http-errors@1.5.0)
+├── accepts@1.3.3 (negotiator@0.6.1, mime-types@2.1.11)
+└── type-is@1.6.13 (media-typer@0.3.0, mime-types@2.1.11)
+[91mnpm [0m[91minfo [0m[91mok 
+[0m ---> 15f5ac65feca
+Removing intermediate container 2dc41cb9e6d2
+Step 6 : COPY . /usr/src/app
+ ---> d48605c9da9e
+Removing intermediate container 433b25d20a9e
+Step 7 : EXPOSE 8080
+ ---> Running in 62ba3d9bdc4f
+ ---> 943718897060
+Removing intermediate container 62ba3d9bdc4f
+Step 8 : RUN npm install
+ ---> Running in 2a82ff7bb8dd
+[91mnpm [0m[91minfo [0m[91mit worked if it ends with ok
+[0m[91mnpm [0m[91minfo [0m[91musing npm@2.15.9
+[0m[91mnpm [0m[91minfo [0m[91musing node@v4.5.0
+[0m[91mnpm [0m[91mWARN [0m[91mpackage.json hello_world_webapp@1.0.0 No repository field.
+[0m[91mnpm [0m[91mWARN [0m[91mpackage.json hello_world_webapp@1.0.0 No license field.
+[0m[91mnpm [0m[91minfo [0m[91mpreinstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mbuild /usr/src/app
+[0m[91mnpm [0m[91minfo [0m[91mlinkStuff hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91minstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mpostinstall hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mprepublish hello_world_webapp@1.0.0
+[0m[91mnpm [0m[91minfo [0m[91mok 
+[0m ---> 8654c2c3cf0b
+Removing intermediate container 2a82ff7bb8dd
+Step 9 : CMD npm start
+ ---> Running in fa99534a971a
+ ---> 337581d8e791
+Removing intermediate container fa99534a971a
+Successfully built 337581d8e791
++ sudo docker push 10.100.198.202:5000/pottjs_webapp:2
+The push refers to a repository [10.100.198.202:5000/pottjs_webapp]
+8c3e48fbb3a0: Preparing
+6615121855b6: Preparing
+a992fe308719: Preparing
+7bf3487451cd: Preparing
+503ef7fa4122: Preparing
+60e6c2d9d442: Preparing
+2101d3c01933: Preparing
+751f5d9ad6db: Preparing
+17587239b3df: Preparing
+9e63c5bce458: Preparing
+60e6c2d9d442: Waiting
+2101d3c01933: Waiting
+751f5d9ad6db: Waiting
+17587239b3df: Waiting
+9e63c5bce458: Waiting
+a992fe308719: Pushed
+7bf3487451cd: Pushed
+8c3e48fbb3a0: Pushed
+60e6c2d9d442: Pushed
+6615121855b6: Pushed
+17587239b3df: Pushed
+503ef7fa4122: Pushed
+751f5d9ad6db: Pushed
+9e63c5bce458: Pushed
+2101d3c01933: Pushed
+2: digest: sha256:83b5681bfef1e3cafc30a1ad29dfee70d2279327a343fd3672745715b20fb733 size: 2421
++ curl -X POST http://10.100.198.201:4243/images/create?fromImage=10.100.198.202:5000/pottjs_webapp:2
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{"status":"Pulling from pottjs_webapp","id":"2"}
+{"status":"Already exists","progressDetail":{},"id":"8ad8b3f87b37"}
+{"status":"Already exists","progressDetail":{},"id":"751fe39c4d34"}
+{"status":"Already exists","progressDetail":{},"id":"ae3b77eefc06"}
+{"status":"Already exists","progressDetail":{},"id":"7783aac582ec"}
+{"status":"Already exists","progressDetail":{},"id":"393ad8a32e58"}
+{"status":"Already exists","progressDetail":{},"id":"dbe45f91a065"}
+{"status":"Pulling fs layer","progressDetail":{},"id":"d3f6bdb0ebe7"}
+{"status":"Pulling fs layer","progressDetail":{},"id":"1408a7151b73"}
+{"status":"Pulling fs layer","progressDetail":{},"id":"6427aa1e340a"}
+{"status":"Pulling fs layer","progressDetail":{},"id":"ac8b38743c68"}
+{"status":"Waiting","progressDetail":{},"id":"ac8b38743c68"}
+{"status":"Downloading","progressDetail":{"current":35212,"total":1029417},"progress":"[=\u003e                                                 ] 35.21 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":65536,"total":1029417},"progress":"[===\u003e                                               ] 65.54 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":336,"total":336},"progress":"[==================================================\u003e]    336 B/336 B","id":"1408a7151b73"}
+{"status":"Verifying Checksum","progressDetail":{},"id":"1408a7151b73"}
+{"status":"Download complete","progressDetail":{},"id":"1408a7151b73"}
+{"status":"Downloading","progressDetail":{"current":82912,"total":1029417},"progress":"[====\u003e                                              ] 82.91 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":115680,"total":1029417},"progress":"[=====\u003e                                             ] 115.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":148448,"total":1029417},"progress":"[=======\u003e                                           ] 148.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":181216,"total":1029417},"progress":"[========\u003e                                          ] 181.2 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":213984,"total":1029417},"progress":"[==========\u003e                                        ]   214 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":246752,"total":1029417},"progress":"[===========\u003e                                       ] 246.8 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":279520,"total":1029417},"progress":"[=============\u003e                                     ] 279.5 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":290728,"total":1029417},"progress":"[==============\u003e                                    ] 290.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":128,"total":128},"progress":"[==================================================\u003e]    128 B/128 B","id":"d3f6bdb0ebe7"}
+{"status":"Verifying Checksum","progressDetail":{},"id":"d3f6bdb0ebe7"}
+{"status":"Download complete","progressDetail":{},"id":"d3f6bdb0ebe7"}
+{"status":"Extracting","progressDetail":{"current":128,"total":128},"progress":"[==================================================\u003e]    128 B/128 B","id":"d3f6bdb0ebe7"}
+{"status":"Downloading","progressDetail":{"current":3646,"total":11566},"progress":"[===============\u003e                                   ] 3.646 kB/11.57 kB","id":"ac8b38743c68"}
+{"status":"Downloading","progressDetail":{"current":11566,"total":11566},"progress":"[==================================================\u003e] 11.57 kB/11.57 kB","id":"ac8b38743c68"}
+{"status":"Verifying Checksum","progressDetail":{},"id":"ac8b38743c68"}
+{"status":"Download complete","progressDetail":{},"id":"ac8b38743c68"}
+{"status":"Downloading","progressDetail":{"current":303600,"total":1029417},"progress":"[==============\u003e                                    ] 303.6 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":336368,"total":1029417},"progress":"[================\u003e                                  ] 336.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":369136,"total":1029417},"progress":"[=================\u003e                                 ] 369.1 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":401904,"total":1029417},"progress":"[===================\u003e                               ] 401.9 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":434672,"total":1029417},"progress":"[=====================\u003e                             ] 434.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":467440,"total":1029417},"progress":"[======================\u003e                            ] 467.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":500208,"total":1029417},"progress":"[========================\u003e                          ] 500.2 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":532976,"total":1029417},"progress":"[=========================\u003e                         ]   533 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":565744,"total":1029417},"progress":"[===========================\u003e                       ] 565.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":598512,"total":1029417},"progress":"[=============================\u003e                     ] 598.5 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":631280,"total":1029417},"progress":"[==============================\u003e                    ] 631.3 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":664048,"total":1029417},"progress":"[================================\u003e                  ]   664 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":696816,"total":1029417},"progress":"[=================================\u003e                 ] 696.8 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":729584,"total":1029417},"progress":"[===================================\u003e               ] 729.6 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":762352,"total":1029417},"progress":"[=====================================\u003e             ] 762.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":795120,"total":1029417},"progress":"[======================================\u003e            ] 795.1 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":827888,"total":1029417},"progress":"[========================================\u003e          ] 827.9 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":860656,"total":1029417},"progress":"[=========================================\u003e         ] 860.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":893424,"total":1029417},"progress":"[===========================================\u003e       ] 893.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":926192,"total":1029417},"progress":"[============================================\u003e      ] 926.2 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":958960,"total":1029417},"progress":"[==============================================\u003e    ]   959 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":991728,"total":1029417},"progress":"[================================================\u003e  ] 991.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Downloading","progressDetail":{"current":1024496,"total":1029417},"progress":"[=================================================\u003e ] 1.024 MB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Verifying Checksum","progressDetail":{},"id":"6427aa1e340a"}
+{"status":"Download complete","progressDetail":{},"id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":128,"total":128},"progress":"[==================================================\u003e]    128 B/128 B","id":"d3f6bdb0ebe7"}
+{"status":"Pull complete","progressDetail":{},"id":"d3f6bdb0ebe7"}
+{"status":"Extracting","progressDetail":{"current":336,"total":336},"progress":"[==================================================\u003e]    336 B/336 B","id":"1408a7151b73"}
+{"status":"Extracting","progressDetail":{"current":336,"total":336},"progress":"[==================================================\u003e]    336 B/336 B","id":"1408a7151b73"}
+{"status":"Pull complete","progressDetail":{},"id":"1408a7151b73"}
+{"status":"Extracting","progressDetail":{"current":32768,"total":1029417},"progress":"[=\u003e                                                 ] 32.77 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":65536,"total":1029417},"progress":"[===\u003e                                               ] 65.54 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":98304,"total":1029417},"progress":"[====\u003e                                              ]  98.3 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":163840,"total":1029417},"progress":"[=======\u003e                                           ] 163.8 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":229376,"total":1029417},"progress":"[===========\u003e                                       ] 229.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":294912,"total":1029417},"progress":"[==============\u003e                                    ] 294.9 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":327680,"total":1029417},"progress":"[===============\u003e                                   ] 327.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":393216,"total":1029417},"progress":"[===================\u003e                               ] 393.2 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":425984,"total":1029417},"progress":"[====================\u003e                              ]   426 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":458752,"total":1029417},"progress":"[======================\u003e                            ] 458.8 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":524288,"total":1029417},"progress":"[=========================\u003e                         ] 524.3 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":589824,"total":1029417},"progress":"[============================\u003e                      ] 589.8 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":655360,"total":1029417},"progress":"[===============================\u003e                   ] 655.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":688128,"total":1029417},"progress":"[=================================\u003e                 ] 688.1 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":753664,"total":1029417},"progress":"[====================================\u003e              ] 753.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":786432,"total":1029417},"progress":"[======================================\u003e            ] 786.4 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":851968,"total":1029417},"progress":"[=========================================\u003e   100 13958    0 13958    0     0  35452      0 --:--:-- --:--:-- --:--:-- 35516
+      ]   852 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":884736,"total":1029417},"progress":"[==========================================\u003e        ] 884.7 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":950272,"total":1029417},"progress":"[==============================================\u003e    ] 950.3 kB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":1015808,"total":1029417},"progress":"[=================================================\u003e ] 1.016 MB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":1029417,"total":1029417},"progress":"[==================================================\u003e] 1.029 MB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":1029417,"total":1029417},"progress":"[==================================================\u003e] 1.029 MB/1.029 MB","id":"6427aa1e340a"}
+{"status":"Pull complete","progressDetail":{},"id":"6427aa1e340a"}
+{"status":"Extracting","progressDetail":{"current":11566,"total":11566},"progress":"[==================================================\u003e] 11.57 kB/11.57 kB","id":"ac8b38743c68"}
+{"status":"Extracting","progressDetail":{"current":11566,"total":11566},"progress":"[==================================================\u003e] 11.57 kB/11.57 kB","id":"ac8b38743c68"}
+{"status":"Pull complete","progressDetail":{},"id":"ac8b38743c68"}
+{"status":"Digest: sha256:83b5681bfef1e3cafc30a1ad29dfee70d2279327a343fd3672745715b20fb733"}
+{"status":"Status: Downloaded newer image for 10.100.198.202:5000/pottjs_webapp:2"}
++ curl -X POST -H Content-Type: application/json http://10.100.198.201:4243/containers/create?name=pottjs_webappSNAPSHOT2 -d {
+       "Image": "10.100.198.202:5000/pottjs_webapp:2",
+       "HostConfig": {
+         "PortBindings": { "8080/tcp": [{ "HostPort": "8080" }] }         
+      }
+  }
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   256  100    90  100   166   1360   2510 --:--:-- --:--:-- --:--:--  2553
+{"Id":"0409b8a53746c938cc93fba19a2678297c8c6fe9fee27e47e7d7c0af8cb99159","Warnings":null}
++ curl -X POST http://10.100.198.201:4243/containers/pottjs_webappSNAPSHOT1/kill
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   102  100   102    0     0  20957      0 --:--:-- --:--:-- --:--:-- 34000
+{"message":"Cannot kill container pottjs_webappSNAPSHOT1: No such container: pottjs_webappSNAPSHOT1"}
++ curl -X POST http://10.100.198.201:4243/containers/pottjs_webappSNAPSHOT2/start
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Finished: SUCCESS

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.6.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/crazzle/pottjs-app.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>REGISTRY=&apos;10.100.198.202:5000&apos;
+TARGET=&apos;http://10.100.198.201:4243&apos;
+VERSION=&apos;SNAPSHOT&apos;
+ARTIFACT=&apos;pottjs_webapp&apos;
+NAME=${ARTIFACT}${VERSION}${BUILD_NUMBER}
+PREV_BUILD_NUMBER=`expr $BUILD_NUMBER - 1`
+PREV_NAME=${ARTIFACT}${VERSION}${PREV_BUILD_NUMBER}
+
+sudo docker build -t $REGISTRY/$ARTIFACT:$VERSION_$BUILD_NUMBER .
+sudo docker push $REGISTRY/$ARTIFACT:$VERSION_$BUILD_NUMBER
+
+curl -X POST $TARGET/images/create?fromImage=$REGISTRY/$ARTIFACT:$VERSION_$BUILD_NUMBER
+
+curl -X POST -H &apos;Content-Type: application/json&apos; $TARGET/containers/create?name=$NAME -d &quot;{
+       \&quot;Image\&quot;: \&quot;$REGISTRY/$ARTIFACT:$VERSION_$BUILD_NUMBER\&quot;,
+       \&quot;HostConfig\&quot;: {
+         \&quot;PortBindings\&quot;: { \&quot;8080/tcp\&quot;: [{ \&quot;HostPort\&quot;: \&quot;8080\&quot; }] }         
+      }
+  }&quot;
+
+
+curl -X POST $TARGET/containers/$PREV_NAME/kill
+
+curl -X POST $TARGET/containers/$NAME/start
+
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
