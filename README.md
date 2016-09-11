@@ -7,6 +7,16 @@ Vagrant is used to provision the three VMs (Jenkins Instance, Docker Registry, A
 
 The folder "jenkins_jobs" contains two pre-configured jobs that deploy either a
 Python or a NodeJS application to the application node.
+
+The two jobs basically version applications over infrastructure using the Jenkins
+build number as the versioning scheme. A simple mechanism but proven stable.
+
+The Jenkins jobs are far away from perfect:
+- missing checks if docker remote api calls fail
+- missing proper check for already running instance if the application,
+which is at the moment done my decrementing the build number
+
+
 The folder "jenkins_plugins" contains the plugins needed to run these jobs (e.g. the Git-Plugin).
 
 The "scripts" folder contains all needed bash scripts to bootstrap the provisioning
